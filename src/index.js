@@ -28,7 +28,7 @@ class Board extends React.Component {
     return (
       <Square
         value={this.state.squares[i]}
-        onClick={() => this.handleClick()}
+        onClick={() => this.handleClick(i)}
         />
     );
   }
