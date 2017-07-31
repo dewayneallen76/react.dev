@@ -22,3 +22,17 @@ ReactDOM.render(
   <App />,
   document.getElementById('app')
 );
+
+class HelloUser extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}!
+      </div>
+    )
+  }
+}
+ReactDOM.render(
+  <HelloUser name="Dewayne"/>,
+  document.getElementById('HelloUser')
+);
