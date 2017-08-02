@@ -1,7 +1,8 @@
 var React = require('react');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
-// This is a stateless functional component it does not have any state, we are receiving everything through props. It is a functional component because it's just a function that is rendering or returning some UI. 
+// This is a stateless functional component it does not have any state, we are receiving everything through props. It is a functional component because it's just a function that is rendering or returning some UI.
 function SelectLanguage (props) {
 
   var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -31,10 +32,18 @@ class Popular extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      selectedLanguage: 'All'
+      selectedLanguage: 'All',
+      repos: null
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
+  }
+  // Life Cyle Event
+  componentDidMount () {
+    api.fetchPopularRepos(this.state.selectedLanguage)
+      .then(function (repos) {
+        console.log(repos);
+      })
   }
   updateLanguage(lang) {
     this.setState(function(){
