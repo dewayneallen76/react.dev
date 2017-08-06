@@ -1,5 +1,16 @@
 var axios = require('axios');
 
+/*
+ @id github client id;
+ @sec github secret id;
+ @params query string used on github api to use your id and secrect id
+
+ Use these variables if the github api comes back with an access denied 
+ var id = "YOUR_CLIENT_ID";
+ var sec = "YOUR_SECRET_ID";
+ var params = "?client_id=" + id + "&client_secrect=" + sec;
+*/
+
 function getProfile (username) {
   return axios.get('https://api.github.com/users/' + username + params)
     .then(function (user) {
@@ -8,13 +19,13 @@ function getProfile (username) {
 }
 
 function getRepos (username) {
-  return axios.get('https://api.github.com/users/' + username + '/repos'+ params + '&per_page=100')
+  return axios.get('https://api.github.com/users/' + username + '/repos' + params + '&per_page=100')
 }
 
 function getStarCount (repos) {
   return repos.data.reduce(function (count, repo) {
     return count + repo.stargazers_count;
-  }, 0)
+  }, 0);
 }
 
 function calculateScore (profile, repos) {
