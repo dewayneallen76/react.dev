@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('../utils/api');
+var Loading = require('./Loading');
 
 // This is a stateless functional component it does not have any state, we are receiving everything through props. It is a functional component because it's just a function that is rendering or returning some UI.
 function SelectLanguage (props) {
@@ -97,7 +98,7 @@ class Popular extends React.Component {
           onSelect={this.updateLanguage}
         />
         {!this.state.repos
-          ? <p>LOADING</p>
+          ? <Loading />
           : <RepoGrid repos={this.state.repos} />}
       </div>
     )
