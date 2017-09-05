@@ -12,7 +12,7 @@ class Note extends React.Component {
   render() {
     return (
       <div className="note">
-        <p></p>
+        <p>{this.props.children}</p>
         <span>
           <button onClick={this.edit}>Edit</button>
           <button onClick={this.remove}>X</button>
