@@ -3,13 +3,19 @@ import React, { Component } from 'react';
 
 
 class Note extends React.Component {
+  edit() {
+    alert("edit button clicked!");
+  }
+  remove() {
+    alert("remove note");
+  }
   render() {
     return (
       <div className="note">
         <p></p>
         <span>
-          <button>Edit</button>
-          <button>X</button>
+          <button onClick={this.edit}>Edit</button>
+          <button onClick={this.remove}>X</button>
         </span>
       </div>
     )
