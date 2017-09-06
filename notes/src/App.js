@@ -3,13 +3,27 @@ import React, { Component } from 'react';
 
 
 class Note extends React.Component {
+  getInitialState() {
+    return {editing: false}
+  }
   edit() {
-    alert("edit button clicked!");
+    this.setState({editing: true})
+  }
+  save() {
+    this.setState({editing: false})
   }
   remove() {
-    alert("remove note");
+    alert("Note removed.")
   }
-  render() {
+  renderForm() {
+    return (
+      <div className="note">
+        <textarea></textarea>
+        <button onClick={this.save}>SAVE</button>
+      </div>
+    )
+  }
+  renderDisplay() {
     return (
       <div className="note">
         <p>{this.props.children}</p>
@@ -19,6 +33,9 @@ class Note extends React.Component {
         </span>
       </div>
     )
+  }
+  render() {
+    return (this.state.editing) ? this.renderForm() : this.renderDisplay()
   }
 }
 
