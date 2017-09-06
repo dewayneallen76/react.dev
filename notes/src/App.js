@@ -5,11 +5,14 @@ import React, { Component } from 'react';
 class Note extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {editing: false};
-  };
+    this.state = {editing: false}
+
+    this.edit = this.edit.bind(this);
+    this.save = this.save.bind(this);
+  }
 
   edit() {
-     this.setState({editing: true})
+    this.setState({editing: true})
   }
   save() {
     this.setState({editing: false})
