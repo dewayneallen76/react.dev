@@ -6,11 +6,10 @@ class Note extends React.Component {
   constructor(props) {
     super(props);
     this.state = {editing: false};
-
   };
 
   edit() {
-    this.setState({editing: true})
+     this.setState({editing: true})
   }
   save() {
     this.setState({editing: false})
@@ -18,7 +17,7 @@ class Note extends React.Component {
   remove() {
     alert("Note removed.")
   }
-  
+
   renderForm() {
     return (
       <div className="note">
