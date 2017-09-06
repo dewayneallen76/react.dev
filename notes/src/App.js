@@ -15,6 +15,8 @@ class Note extends React.Component {
     this.setState({editing: true})
   }
   save() {
+    var val = this.refs.newText.value
+    alert("Later we will save this value: " + val)
     this.setState({editing: false})
   }
   remove() {
@@ -24,7 +26,7 @@ class Note extends React.Component {
   renderForm() {
     return (
       <div className="note">
-        <textarea></textarea>
+        <textarea ref="newText"></textarea>
         <button onClick={this.save}>SAVE</button>
       </div>
     )
