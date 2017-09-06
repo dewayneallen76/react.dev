@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 
 
 class Note extends React.Component {
-  getInitialState() {
-    return {editing: false}
-  }
+  constructor(props) {
+    super(props);
+    this.state = {editing: false}
+  };
   edit() {
     this.setState({editing: true})
   }
