@@ -46,7 +46,8 @@ class Board extends React.Component {
   }
   eachNote(note) {
     return (
-      <Note key={note.id}
+      <Note
+            key={note.id}
             id={note.id}
             onChange={this.update}
             onRemove={this.remove}>
@@ -66,7 +67,7 @@ class Board extends React.Component {
 }
 
 Board.propTypes = {
-  count: PropTypes.func.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default Board;
