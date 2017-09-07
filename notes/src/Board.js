@@ -6,10 +6,12 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: 'Call Bill',
-             'Email Bill',
-             'Kill Bill',
-             'Bury Bill'
+      notes: [
+        'Call Bill',
+        'Email Bill',
+        'Kill Bill',
+        'Bury Bill'
+      ]
     }
   }
   render() {
