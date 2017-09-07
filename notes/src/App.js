@@ -10,8 +10,18 @@ class Note extends React.Component {
     this.edit = this.edit.bind(this);
     this.save = this.save.bind(this);
     this.remove = this.remove.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
+    this.randomBetween = this.randomBetween.bind(this);
   }
-
+  componentWillMount() {
+    this.style = {
+      right: this.randomBetween(0, window.innerWidth - 150, 'px'),
+      top: this.randomBetween(0, window.innerHeight - 150, 'px')
+    }
+  }
+  randomBetween(x, y, s) {
+    return (x + Math.ceil(Math.random() * (y-x))) + s
+  }
   edit() {
     this.setState({editing: true})
   }
@@ -25,7 +35,8 @@ class Note extends React.Component {
 
   renderForm() {
     return (
-      <div className="note">
+      <div className="note"
+           style={this.style}>
         <textarea ref="newText"></textarea>
         <button onClick={this.save}>SAVE</button>
       </div>
@@ -33,7 +44,8 @@ class Note extends React.Component {
   }
   renderDisplay() {
     return (
-      <div className="note">
+      <div className="note"
+           style={this.style}>
         <p>{this.props.children}</p>
         <span>
           <button onClick={this.edit}>Edit</button>
