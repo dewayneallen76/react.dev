@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Note from './App';
+import 'whatwg-fetch';
 
 
 class Board extends React.Component {
@@ -14,6 +15,9 @@ class Board extends React.Component {
     this.remove = this.remove.bind(this);
     this.eachNote = this.eachNote.bind(this);
     this.nextId = this.nextId.bind(this);
+  }
+  componentWillMount() {
+
   }
   nextId() {
     this.uniqueId = this.uniqueId || 0
