@@ -15,12 +15,11 @@ class Note extends React.Component {
     this.setState({editing: true})
   }
   save() {
-    var val = this.refs.newText.value
-    alert("Later we will save this value: " + val)
+    this.props.onChange(this.refs.newText.value, this.props.id)
     this.setState({editing: false})
   }
   remove() {
-    alert("Note removed.")
+    this.props.onRemove(this.props.id)
   }
 
   renderForm() {
