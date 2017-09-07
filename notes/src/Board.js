@@ -23,6 +23,7 @@ class Board extends React.Component {
       note => (note.id !== id) ?
         note:
           {
+            ...note,
             note: newText
           }
     )
