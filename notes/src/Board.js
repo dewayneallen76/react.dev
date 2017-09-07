@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Note from './App';
 import 'whatwg-fetch';
+import Draggable, {DraggableCore} from 'react-draggable';
 
 
 class Board extends React.Component {
@@ -15,9 +16,21 @@ class Board extends React.Component {
     this.remove = this.remove.bind(this);
     this.eachNote = this.eachNote.bind(this);
     this.nextId = this.nextId.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
   }
   componentWillMount() {
-
+    if(this.props.count) {
+      var url = `http://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`
+      fetch(url)
+        .then(results => results.json())
+        .then(array => array[0])
+        .then(text => text.split('. '))
+        .then(array => array.forEach(
+          sentence => this.add(sentence)))
+        .catch(function(err) {
+          console.log("Didn't connect to the API", err);
+        })
+    }
   }
   nextId() {
     this.uniqueId = this.uniqueId || 0
