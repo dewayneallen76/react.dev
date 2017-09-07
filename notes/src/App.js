@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Draggable from 'react-draggable';
 
 
 class Note extends React.Component {
@@ -55,18 +55,23 @@ class Note extends React.Component {
   }
   renderDisplay() {
     return (
-      <div className="note"
-           style={this.style}>
-        <p>{this.props.children}</p>
-        <span>
-          <button onClick={this.edit}>Edit</button>
-          <button onClick={this.remove}>X</button>
-        </span>
-      </div>
+        <div className="note"
+          style={this.style}>
+          <p>{this.props.children}</p>
+          <span>
+            <button onClick={this.edit}>Edit</button>
+            <button onClick={this.remove}>X</button>
+          </span>
+        </div>
     )
   }
   render() {
-    return (this.state.editing) ? this.renderForm() : this.renderDisplay()
+    return (
+      <Draggable>
+        {(this.state.editing) ? this.renderForm() : this.renderDisplay()}
+      </Draggable>
+    )
+
   }
 }
 
