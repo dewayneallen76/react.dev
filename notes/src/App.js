@@ -9,6 +9,7 @@ class Note extends React.Component {
 
     this.edit = this.edit.bind(this);
     this.save = this.save.bind(this);
+    this.remove = this.remove.bind(this);
   }
 
   edit() {
