@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Note from './App';
+import Note from './Note';
 import 'whatwg-fetch';
-import Draggable, {DraggableCore} from 'react-draggable';
 
 
 class Board extends React.Component {
