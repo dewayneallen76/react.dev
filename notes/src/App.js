@@ -19,6 +19,15 @@ class Note extends React.Component {
       top: this.randomBetween(0, window.innerHeight - 150, 'px')
     }
   }
+  componentDidUpdate() {
+    if(this.state.editing) {
+      this.refs.newText.focus()
+      this.refs.newText.select()
+    }
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.children !== nextProps.children || this.state !== nextState
+  }
   randomBetween(x, y, s) {
     return (x + Math.ceil(Math.random() * (y-x))) + s
   }
@@ -37,7 +46,9 @@ class Note extends React.Component {
     return (
       <div className="note"
            style={this.style}>
-        <textarea ref="newText"></textarea>
+        <textarea ref="newText"
+                  defaultValue={this.props.children}>
+        </textarea>
         <button onClick={this.save}>SAVE</button>
       </div>
     )
