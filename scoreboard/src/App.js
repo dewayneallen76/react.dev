@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import PropTypes from 'react-prop-types';
 
 class App extends Component {
   render () {
@@ -39,6 +40,10 @@ class App extends Component {
       </div>
     )
   }
+}
+
+App.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 
