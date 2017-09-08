@@ -12,7 +12,7 @@ class App extends Component {
         <Header title={this.props.title} />
 
         <div className="players">
-
+          
           <Player name="Dewayne" score={30} />
           <Player name="Kristy" score={25} />
 
@@ -24,6 +24,10 @@ class App extends Component {
 
 App.propTypes = {
   title: PropTypes.string,
+  players: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+  })).isRequired,
 }
 
 App.defaultProps = {
