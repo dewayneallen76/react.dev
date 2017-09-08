@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div className="scoreboard">
         <div className="header">
-          <h1>Scoreboard</h1>
+          <h1>{this.props.title}</h1>
         </div>
 
         <div className="players">
