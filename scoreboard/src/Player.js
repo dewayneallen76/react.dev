@@ -3,21 +3,6 @@ import PropTypes from 'prop-types';
 import Counter from './Counter';
 
 
-var PLAYERS = [
-  {
-    name: "Dewayne",
-    score: 30,
-  },
-  {
-    name: "Kristy",
-    score: 25,
-  },
-  {
-    name: "MaryAlice",
-    score: 20,
-  }
-];
-
 class Player extends Component {
   render () {
     return (
