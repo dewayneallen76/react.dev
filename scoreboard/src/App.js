@@ -43,7 +43,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+}
+
+App.defaultProps = {
+  title: "Scoreboard",
 }
 
 
