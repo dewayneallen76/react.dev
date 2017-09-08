@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import PropTypes from 'react-prop-types';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   render () {
