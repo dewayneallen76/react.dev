@@ -1,18 +1,18 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       score: 0,
+      propTypes: {
+        initialScore: PropTypes.number.isRequired,
+      }
 
     }
   this.incrementScore = this.incrementScore.bind(this);
   this.decrementScore = this.decrementScore.bind(this);
-  }
-  propTypes: {
-
   }
 
   incrementScore() {
