@@ -7,6 +7,12 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      players: this.props.initialPlayers,
+    }
+  }
   render () {
     return (
       <div className="scoreboard">
@@ -14,7 +20,7 @@ class App extends Component {
         <Header title={this.props.title} />
 
         <div className="players">
-          {this.props.players.map(function(player) {
+          {this.state.players.map(function(player) {
             return <Player name={player.name} score={player.score} key={player.id} />
           })}
 
@@ -26,7 +32,7 @@ class App extends Component {
 
 App.propTypes = {
   title: PropTypes.string,
-  players: PropTypes.arrayOf(PropTypes.shape({
+  initialPlayers: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired,
