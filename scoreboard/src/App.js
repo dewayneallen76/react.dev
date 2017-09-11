@@ -13,6 +13,10 @@ class App extends Component {
       players: this.props.initialPlayers,
     }
   }
+
+  onScoreChange(delta) {
+    console.log("onScoreChange", delta);
+  }
   render () {
     return (
       <div className="scoreboard">
@@ -21,8 +25,14 @@ class App extends Component {
 
         <div className="players">
           {this.state.players.map(function(player) {
-            return <Player name={player.name} score={player.score} key={player.id} />
-          })}
+            return (
+              <Player
+                onScoreChange={this.onScoreChange}
+                name={player.name}
+                score={player.score}
+                key={player.id} />
+            )
+          }.bind(this))}
 
         </div>
       </div>
