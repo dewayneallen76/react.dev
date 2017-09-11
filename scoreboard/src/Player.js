@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 import Counter from './Counter';
 
 
-class Player extends Component {
-  render () {
-    return (
-      <div className="player">
-        <div className="player-name">
-          {this.props.name}
-        </div>
-        <div className="player-score">
-          <Counter score={this.props.score} />
-        </div>
+function Player(props) {
+  return (
+    <div className="player">
+      <div className="player-name">
+        {props.name}
       </div>
-    )
-  }
+      <div className="player-score">
+        <Counter score={props.score} />
+      </div>
+    </div>
+  )
 }
 
 Player.propTypes = {
