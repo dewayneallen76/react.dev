@@ -12,7 +12,7 @@ class App extends Component {
         <Header title={this.props.title} />
 
         <div className="players">
-          
+
           <Player name="Dewayne" score={30} />
           <Player name="Kristy" score={25} />
 
