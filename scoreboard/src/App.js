@@ -77,5 +77,4 @@ App.defaultProps = {
   title: "Scoreboard",
 }
 
-
 export default App;
