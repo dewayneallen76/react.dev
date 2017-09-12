@@ -18,7 +18,6 @@ class AddPlayer extends Component {
   }
 
   onNameChange(e) {
-    console.log("onNameChange", e.target.value);
     this.setState({name: e.target.value});
   }
 
