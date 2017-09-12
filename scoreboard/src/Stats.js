@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 function Stats(props) {
 
-  var totalPlayers = props.players.length;
+  // var totalPlayers = props.players.length;
 
   return (
     <table className="stats">
       <tbody>
         <tr>
           <td>Players:</td>
-          <td>{totalPlayers}</td>
+          <td>4</td>
         </tr>
         <tr>
           <td>Total Points:</td>
