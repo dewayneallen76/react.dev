@@ -5,6 +5,7 @@ import Player from './Player';
 import AddPlayer from './AddPlayer';
 import PropTypes from 'prop-types';
 
+var nextId = 5;
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,13 @@ class App extends Component {
 
   onPlayerAdd(name) {
     console.log("Player Added", name);
+    this.state.players.push({
+      name: name,
+      score: 0,
+      id: nextId,
+    });
+    this.setState(this.state);
+    nextId += 1;
   }
 
   render () {
