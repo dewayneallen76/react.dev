@@ -27,5 +27,7 @@ var PLAYERS = [
   },
 ]
 
+var nextId = 5;
+
 ReactDOM.render(<App initialPlayers={PLAYERS}/>, document.getElementById('root'));
 registerServiceWorker();
