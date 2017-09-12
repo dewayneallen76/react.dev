@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
 import Player from './Player';
+import AddPlayer from './AddPlayer';
 import PropTypes from 'prop-types';
 
 
@@ -17,6 +18,10 @@ class App extends Component {
   onScoreChange(index, delta) {
     this.state.players[index].score += delta;
     this.setState(this.state);
+  }
+
+  onPlayerAdd(name) {
+    console.log("Player Added", name);
   }
 
   render () {
@@ -37,6 +42,7 @@ class App extends Component {
           }.bind(this))}
 
         </div>
+        <AddPlayer onAdd={this.onPlayerAdd}/>
       </div>
     )
   }
