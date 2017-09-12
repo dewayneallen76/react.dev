@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       players: this.props.initialPlayers,
     }
+    this.onPlayerAdd = this.onPlayerAdd.bind(this);
   }
 
 
@@ -32,6 +33,12 @@ class App extends Component {
     nextId += 1;
   }
 
+  onRemovePlayer(index) {
+    this.state.players.splice(index, 1);
+    this.setState(this.state);
+    console.log("remove", index);
+  }
+
   render () {
     return (
       <div className="scoreboard">
@@ -43,6 +50,7 @@ class App extends Component {
             return (
               <Player
                 onScoreChange={function(delta) {this.onScoreChange(index,delta)}.bind(this)}
+                onRemove={function() {this.onRemovePlayer(index)}.bind(this)}
                 name={player.name}
                 score={player.score}
                 key={player.id} />
