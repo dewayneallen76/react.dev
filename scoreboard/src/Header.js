@@ -5,7 +5,7 @@ import Stats from './Stats';
 function Header(props) {
   return (
     <div className="header">
-      <Stats />
+      <Stats players={props.players}/>
       <h1>{props.title}</h1>
     </div>
   )
