@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Route,
-  NavLink
+  NavLink,
+  Redirect,
 } from 'react-router-dom';
 
 // Components
@@ -19,6 +20,8 @@ const Courses = () => (
         <li><NavLink to='/courses/javascript'>JavaScript</NavLink></li>
       </ul>
     </div>
+
+    <Route exact path="/courses" render={ () => <Redirect to="/courses/html" /> } />
     <Route path="/courses/html" component={HTML}/>
     <Route path="/courses/css" component={CSS}/>
     <Route path="/courses/javascript" component={JavaScript}/>
