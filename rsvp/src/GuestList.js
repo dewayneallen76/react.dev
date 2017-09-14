@@ -6,7 +6,12 @@ const GuestList = props => {
   return (
     <ul>
       {props.guests.map((guest,index) =>
-        <Guest key={index} name={guest.name} confirmed={guest.isConfirmed}/>
+        <Guest
+          key={index}
+          name={guest.name}
+          isConfirmed={guest.isConfirmed}
+          handleConfirmation={() => props.toggleConfirmationAt(index)}
+        />
       )}
     </ul>
   )
@@ -14,6 +19,7 @@ const GuestList = props => {
 
 GuestList.propTypes = {
   guests: PropTypes.array.isRequired,
+  toggleConfirmationAt: PropTypes.func.isRequired,
 }
 
 export default GuestList;
