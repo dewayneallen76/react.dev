@@ -32,7 +32,7 @@ class App extends Component {
         if (index === indexToChange) {
           return {
             ...guest,
-            [property]: !guest.[property]
+            [property]: !guest[property]
           };
         }
         return guest;
