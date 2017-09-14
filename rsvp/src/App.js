@@ -4,8 +4,6 @@ import './App.css';
 // App components
 import Header from './Header';
 import MainContent from './MainContent';
-import GuestList from './GuestList';
-import Counter from './Counter';
 
 class App extends Component {
 

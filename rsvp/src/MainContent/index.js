@@ -7,29 +7,28 @@ import Counter from './Counter';
 
 const MainContent = props => {
   return (
-    <ConfirmedFilter
-      toggleFiltered={props.toggleFiltered}
-      isFilter={props.isFiltered}
-    />
-    <Counter
-      totalInvited={props.totalInvited}
-      numberAttending={props.numberAttending}
-      numberUnconfirmed={props.numberUnconfirmed}
-    />
-    <GuestList
-      guests={props.guests}
-      toggleConfirmationAt={props.toggleConfirmationAt}
-      toggleEditingAt={props.toggleEditingAt}
-      setNameAt={props.setNameAt}
-      isFiltered={props.isFiltered}
-      removeGuestAt={props.removeGuestAt}
-      pendingGuest={props.pendingGuest}
-    />
+    <div className="main">
+      <ConfirmedFilter
+        toggleFiltered={props.toggleFiltered}
+        isFiltered={props.isFiltered} />
+      <Counter
+        totalInvited={props.totalInvited}
+        numberAttending={props.numberAttending}
+        numberUnconfirmed={props.numberUnconfirmed} />
+      <GuestList
+        guests={props.guests}
+        toggleConfirmationAt={props.toggleConfirmationAt}
+        toggleEditingAt={props.toggleEditingAt}
+        setNameAt={props.setNameAt}
+        isFiltered={props.isFiltered}
+        removeGuestAt={props.removeGuestAt}
+        pendingGuest={props.pendingGuest} />
+    </div>
   )
 }
 
 MainContent.propTypes = {
-  toggleFilter: PropTypes.func.isRequired,
+  toggleFiltered: PropTypes.func.isRequired,
   isFiltered: PropTypes.bool.isRequired,
   totalInvited: PropTypes.number.isRequired,
   numberAttending: PropTypes.number.isRequired,
