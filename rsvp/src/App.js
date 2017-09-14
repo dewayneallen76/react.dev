@@ -107,6 +107,7 @@ class App extends Component {
             toggleConfirmationAt={this.toggleConfirmationAt}
             toggleEditingAt={this.toggleEditingAt}
             setNameAt={this.setNameAt}
+            isFiltered={this.state.isFiltered}
           />
         </div>
       </div>
