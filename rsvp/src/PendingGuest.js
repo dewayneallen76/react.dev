@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import GuestName from './GuestName';
-
 const PendingGuest = props => {
-  return (
-    <li>
-      <GuestName
-        isEditing={props.isEditing}
-        handleNameEdits={e => props.setName(e.target.value)}>
-        {props.name}
-      </GuestName>
-
-    </li>
-  )
-}
+  if(props.name) {
+    return (
+      <li className="pending">
+        <span>
+          {props.name}
+        </span>
+      </li>
+    );
+  }
+  return null;
+};
 
 PendingGuest.propTypes = {
   name: PropTypes.string.isRequired,
