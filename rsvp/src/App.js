@@ -3,6 +3,7 @@ import './App.css';
 
 // App components
 import GuestList from './GuestList';
+import Counter from './Counter';
 
 class App extends Component {
 
@@ -23,7 +24,7 @@ class App extends Component {
       {
         name: 'Lola',
         isConfirmed: true,
-        isEditing: false,
+        isEditing: false
       }
     ]
   };
@@ -48,7 +49,7 @@ class App extends Component {
     this.setState({
       guests: [
         ...this.state.guests.slice(0, index),
-        ...this.state.guests.slice(index + 1),
+        ...this.state.guests.slice(index + 1)
       ]
     });
 
@@ -85,7 +86,7 @@ class App extends Component {
         },
         ...this.state.guests
       ],
-      pendingGuest: '',
+      pendingGuest: ''
     });
   }
 
@@ -94,6 +95,7 @@ class App extends Component {
   // getUnconfirmedGuests = () =>
 
   render() {
+    const totalInvited = this.getTotalInvited()
     return (
       <div className="App">
         <header>
@@ -117,22 +119,8 @@ class App extends Component {
                 checked={this.state.isFiltered} /> Hide those who haven't responded
             </label>
           </div>
-          <table className="counter">
-            <tbody>
-              <tr>
-                <td>Attending:</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>Unconfirmed:</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Total:</td>
-                <td>3</td>
-              </tr>
-            </tbody>
-          </table>
+          <Counter
+            totalInvited={totalInvited} />
           <GuestList
             guests={this.state.guests}
             toggleConfirmationAt={this.toggleConfirmationAt}
