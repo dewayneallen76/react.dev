@@ -26,7 +26,7 @@ class App extends Component {
         isEditing: false,
       }
     ]
-  }
+  };
 
   toggleGuestPropertyAt = (property, indexToChange) =>
     this.setState({
